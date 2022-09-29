@@ -12,15 +12,13 @@ function ShowCorrectSchedule() {
     let tableForEvenGrisha = document.getElementById("tableForEvenGrisha");
     let tableForOddGrisha = document.getElementById("tableForOddGrisha");
 
-    HideAll(tableForEvenGrisha, tableForOddGrisha, tableForEvenIra, tableForOddIra);
+    HideAll();
 
     if (labelIra.checked === true) {
         if (weekNumber % 2 === 1) {
-            alert('EI');
             tableForEvenIra.style.display = "block";
             tableForOddIra.style.display = "none";
         } else {
-            alert('OI');
             tableForOddIra.style.display = "block";
             tableForEvenIra.style.display = "none";
         }
@@ -38,7 +36,12 @@ function ShowCorrectSchedule() {
     }
 }
 
-function HideAll(tableForEvenGrisha, tableForOddGrisha, tableForEvenIra, tableForOddIra) {
+function HideAll() {
+    let tableForEvenIra = document.getElementById("tableForEvenIra");
+    let tableForOddIra = document.getElementById("tableForOddIra");
+    let tableForEvenGrisha = document.getElementById("tableForEvenGrisha");
+    let tableForOddGrisha = document.getElementById("tableForOddGrisha");
+
     tableForEvenGrisha.style.display = "none";
     tableForOddGrisha.style.display = "none";
     tableForOddIra.style.display = "none";

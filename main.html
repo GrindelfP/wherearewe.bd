@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <title>Where are we?</title>
     <script src="js/mainJS.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
 <!--ytttttnnnnnnnnytttttn[jxe kfdjxre b h.vjxre-->
 </head>
 <body onload="HideAll()">
-<header>
+<header class="header">
   <h1>
     Расписание пар
   </h1>
 </header>
-<main>
+<main class="main">
   <div>
-
+    Выберите, чье расписание хотите узнать:
   </div>
   <label> Ира:
     <input type="radio" id="Ira" name ="name" onclick="ShowCorrectSchedule()">
@@ -23,14 +24,6 @@
     <input type="radio" id="Grisha" name ="name" onclick="ShowCorrectSchedule()">
   </label>
 
-  <div>
-    Пояснения:
-    <ol>
-      <li>
-        Предмет Иры | Предмет Гриши
-      </li>
-    </ol>
-  </div>
 
   <div id="tableForEvenIra">
     <table border="4">
