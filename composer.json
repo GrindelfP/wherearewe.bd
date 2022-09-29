@@ -1,0 +1,14 @@
+{
+  "name": "vendor_name/lokus_est",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "foils",
+      "email": "foilsAtBusStation@gmail.com"
+    }
+  ],
+  "require": {
+  }
+}
