@@ -1,11 +1,15 @@
-function ShowCorrectSchedule() {
+function weekIsEven() {
     let currentDate = new Date();
-    let one = new Date(currentDate.getFullYear(), 0, 1);
-    let numberOfDays = Math.floor((currentDate - one) / (24 * 60 * 60 * 1000));
-    let weekNumber = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);
+    let startDate = new Date(currentDate.getFullYear(), 0, 1);
+    let daysPassed = Math.floor((currentDate - startDate) / (24 * 3600 * 1000));
+    let weekNumber = Math.ceil(daysPassed / 7);
 
-    let labelIra = document.getElementById("Ira");
-    let labelGrisha = document.getElementById("Grisha");
+    return weekNumber % 2 === 0
+}
+
+function ShowCorrectSchedule() {
+    let radioIra = document.getElementById("Ira");
+    let radioGrisha = document.getElementById("Grisha");
 
     let tableForEvenIra = document.getElementById("tableForEvenIra");
     let tableForOddIra = document.getElementById("tableForOddIra");
@@ -14,18 +18,16 @@ function ShowCorrectSchedule() {
 
     HideAll();
 
-    if (labelIra.checked === true) {
-        if (weekNumber % 2 === 1) {
+    if (radioIra.checked === true) {
+        if (weekIsEven()) {
             tableForEvenIra.style.display = "block";
             tableForOddIra.style.display = "none";
         } else {
             tableForOddIra.style.display = "block";
             tableForEvenIra.style.display = "none";
         }
-    }
-
-    else if (labelGrisha.checked === true) {
-        if (weekNumber % 2 === 1) {
+    } else if (radioGrisha.checked === true) {
+        if (weekIsEven()) {
 
             tableForEvenGrisha.style.display = "block";
             tableForOddGrisha.style.display = "none";
